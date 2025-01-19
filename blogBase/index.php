@@ -27,6 +27,15 @@ $articles = $query->fetchAll();
 <body>
 
 <a href="newArticle.php">nouvel article </a>
+<?php foreach ($articles as $article): ?>
+    <hr>
+    <div class="article">
+        <h3><?= $article['title'] ?></h3>
+        <p><?= $article['content'] ?></p>
+        <a href="article.php?id=<?= $article['id'] ?>">Lire</a>
+    </div>
+    <hr>
+<?php endforeach; ?>
 
 </body>
 </html>

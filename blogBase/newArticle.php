@@ -25,9 +25,10 @@ if($title && $content) {
         "title" => $title,
         "content" => $content
     ]);
-
-
+    $id = $pdo->lastInsertId();
+    header('Location: article.php?id='.$id);
 }
+
 
 ?>
 
